@@ -1,0 +1,77 @@
+body {
+    text-align: center;
+}
+
+h2 {
+    font-size: 3em;
+}
+
+
+/*button[name="toggleButton"]{*/
+/*    !*padding: 20px 40px 20px 64px;*!*/
+/*    padding: 20px 0;*/
+/*    font-size: 2.5em;*/
+/*}*/
+
+
+/*.toggleButtonDiv {*/
+/*    display:inline-flex;*/
+/*}*/
+
+.toggleButton {
+    padding: 20px 0;
+    font-size: 2.5em;
+    background-color: #efefef;
+    transition: all 0.0s;
+    display:inline-flex;
+}
+.toggleButton:hover > .toggleIcon {
+    transition: all .5s linear;
+    animation: toggleArrowAnimation 1s infinite linear;
+}
+@keyframes toggleArrowAnimation {
+    0% {
+        transform: translateY(0px);
+    }
+    25% {
+        transform: translateY(6px);
+    }
+    50% {
+      transform: translateY(0px);
+    }
+    75% {
+        transform: translateY(-6px);
+    }
+}
+
+.toggleIcon {
+    background: url('/static/toggleIcon.png') no-repeat center;
+    padding: 24px 40px;
+}
+.toggleIconSpacing {
+    padding: 20px;
+}
+
+.settingsIcon {
+    background: url('/static/materialSettingsIcon.svg') no-repeat center;
+    transition: all 0.0s;
+    padding: 24px 40px;
+}
+
+.settingsIconSpacing {
+    padding: 20px;
+}
+
+.settingsLinkDiv:hover > .settingsIcon {
+    transition: all .5s linear;
+    animation: settingsGearAnimation 2s infinite linear;
+}
+
+@keyframes settingsGearAnimation {
+    0% {
+        transform: rotateZ(0deg);
+    }
+    100% {
+      transform: rotateZ(360deg);
+    }
+}

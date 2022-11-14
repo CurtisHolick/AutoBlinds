@@ -1,0 +1,46 @@
+{% from "scheduleInputRow.html" import scheduleBlock with context %}
+{#TODO: remove "with context"?#}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='masterStyle.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='schedule.css') }}">
+    <title>Blind Schedule Settings</title>
+    <script>
+        /*function updateRangeOutput(outputTagId, value) {
+            console.log(value, outputTagId);
+            document.getElementById(outputTagId).text = value;
+        }*/
+    </script>
+</head>
+<body>
+<h1>AutoBlinds Schedule</h1>
+<h1 id="sliderOutput"></h1>
+<form action="/saveSchedule" method="post">
+    <div class="scheduleBlocks">
+        {{ scheduleBlock("Sunday", dayTimes['Sunday']) }}
+        {{ scheduleBlock("Monday", dayTimes['Monday']) }}
+        {{ scheduleBlock("Tuesday", dayTimes['Tuesday']) }}
+        {{ scheduleBlock("Wednesday", dayTimes['Wednesday']) }}
+        {{ scheduleBlock("Thursday", dayTimes['Thursday']) }}
+        {{ scheduleBlock("Friday", dayTimes['Friday']) }}
+        {{ scheduleBlock("Saturday", dayTimes['Saturday']) }}
+    </div>
+    <br>
+    <br>
+    <button name="saveScheduleButton" type="submit">Save Schedule</button>
+</form>
+
+<br>
+<a href="/">
+    <div class="linkDiv linkButtonDiv">
+        <span class="backIcon"></span>
+        <span>Return to home</span>
+        <span class="backIconSpacing"></span>
+    </div>
+</a>
+
+</body>
+</html>

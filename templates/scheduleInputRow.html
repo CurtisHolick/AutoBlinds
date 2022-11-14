@@ -1,0 +1,63 @@
+{% macro scheduleBlock(day, times) %}
+
+    <script>
+    function initSliderColors(){
+        colorOpenInput('{{ day }}OpenTimeInput', document.getElementById('{{ day }}OpenTimeInput').value);
+        colorCloseInput('{{ day }}CloseTimeInput', document.getElementById('{{ day }}CloseTimeInput').value);
+        console.log('set colors for {{ day }} slider');
+    }
+
+    function updateRangeOutput(outputTagId, value) {
+            {#console.log(value, outputTagId);#}
+            document.getElementById(outputTagId).innerHTML = value;
+        }
+
+    function handleOpenInput(tag, sliderValue, outputTag) {
+        colorOpenInput(tag, sliderValue);
+        updateRangeOutput(outputTag, 'Open at: ' + sliderValue + ' AM');
+    }
+
+    function handleCloseInput(tag, sliderValue, outputTag) {
+        colorCloseInput(tag, sliderValue);
+        updateRangeOutput(outputTag, 'Close at: ' + sliderValue + ' PM');
+    }
+
+    function colorOpenInput(tag, sliderValue) {
+        slider = document.getElementById(tag);
+        console.log(tag);
+        var value = 100-(slider.value-slider.min)/(slider.max-slider.min)*100;
+        var gradient = 'linear-gradient(to left, #82CFD0 0%, #82CFD0 ' + value + '%, #efefef ' + value + '%, #efefef 100%)';
+        slider.style.setProperty('--sliderBackgroundColor', gradient);
+    }
+    function colorCloseInput(tag, sliderValue) {
+        slider = document.getElementById(tag);
+        var value = (slider.value-slider.min)/(slider.max-slider.min)*100;
+        var gradient = 'linear-gradient(to right, #82CFD0 0%, #82CFD0 ' + value + '%, #efefef ' + value + '%, #efefef 100%)';
+        slider.style.setProperty('--sliderBackgroundColor', gradient);
+    }
+
+    </script>
+    <div class="scheduleBlock">
+        <h2>{{ day }}</h2>
+        <div class="rangeInputLabels">
+            <label id="{{ day }}OpenTime" for="{{ day }}OpenTimeInput">Open at: {{ times[0] }} AM</label>
+            <label id="{{ day }}CloseTime" for="{{ day }}CloseTimeInput">Close at: {{ times[1] }} PM</label>
+        </div>
+        <div class="rangeInputs">
+            <input type="range" id="{{ day }}OpenTimeInput" name="{{ day }}OpenTimeInput"
+                   min="5" max="12" value="{{ times[0] }}" step="1"
+                    oninput="handleOpenInput('{{ day }}OpenTimeInput', this.value, '{{ day }}OpenTime');">
+
+            <input type="range" id="{{ day }}CloseTimeInput" name="{{ day }}CloseTimeInput"
+                       min="4" max="12" value="{{ times[1] }}" step="1"
+                    oninput="handleCloseInput('{{ day }}CloseTimeInput', this.value, '{{ day }}CloseTime');">
+
+        </div>
+    </div>
+    <script>
+    initSliderColors();
+    </script>
+
+
+
+{% endmacro %}

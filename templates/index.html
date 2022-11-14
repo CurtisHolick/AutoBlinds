@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='masterStyle.css') }}">
+        <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='index.css') }}">
+		<title>Blinds Control</title>
+
+	</head>
+	<body>
+		<h1>Blinds are currently {{ blindsState }}</h1>
+
+        <form action="{{ url_for('toggleBlinds') }}" method="post">
+            <button class="toggleButton" name="toggleButton" type="submit">
+                <span class="toggleIcon"></span>
+                Toggle Blinds
+                <span class="toggleIconSpacing"></span>
+            </button>
+		</form>
+
+		<h2>Blinds will open at: {{ openTime }}</h2>
+		<h2>Blinds will close at: {{ closeTime }}</h2>
+
+		<a href="{{ url_for('settings') }}" class="settingsLink">
+            <div class="linkDiv settingsLinkDiv">
+                <span class="settingsIcon"></span>
+                <span>Settings</span>
+                <span class="settingsIconSpacing"></span>
+            </div>
+        </a>
+        <a href="{{ url_for('schedule') }}">
+            <div class="linkDiv">
+                <span>Schedule</span>
+            </div>
+        </a>
+
+	</body>
+</html>

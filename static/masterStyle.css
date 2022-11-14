@@ -1,0 +1,43 @@
+body {
+    background: #6e8593;
+    font-family: Arial, sans-serif;
+}
+h1 {
+    font-size: 5em;
+}
+h1, h2, label {
+    color: white;
+}
+
+a {
+    color: black;
+    border: none;
+    font: 700 18px Arial;
+    font-size: large;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.linkDiv {
+    background-color: #efefef;
+    border-radius: 5px;
+    padding: 20px 0;
+    display: inline-flex;
+    align-items: center;
+    /*width: 30%;*/
+    justify-content: space-around;
+    font-size: 2.5em;
+}
+.linkDiv:hover {
+    background-color: #b8bfc6;
+}
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: large;
+    font-weight: bold;
+}
+button:hover {
+    background-color: #b8bfc6;
+}

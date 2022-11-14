@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='masterStyle.css') }}">
+    <link rel= "stylesheet" type= "text/css" href= "{{ url_for('static',filename='settings.css') }}">
+    <title>Blinds Settings</title>
+</head>
+<body>
+<h1>AutoBlinds Settings</h1>
+<form action="/saveSettings" method="post">
+    <label for="openTime">Blind open time:</label>
+    <input type="time" id="openTime" name="openTime" value="{{ openTime }}">
+    <br>
+    <label for="closeTime">Blind close time:</label>
+    <input type="time" id="closeTime" name="closeTime" value="{{ closeTime }}">
+    <br>
+    <label for="numTurns">Number of spool rotations:</label>
+    <input type="number" step="1" id="numTurns" name="numTurns" value="{{ numTurns }}">
+    <br>
+    <button name="saveButton" type="submit">Save Settings</button>
+</form>
+
+<button onclick="fillBrowserTime()">Use Browser Time</button>
+
+<form action="/saveTime" method="post">
+    <label for="systemTime">Current system time:</label>
+    <input type="datetime-local" id="systemTime" name="systemTime" value="{{ systemTime }}">
+    <br>
+    <button name="saveTimeButton" type="submit">Set system time</button>
+    <br>
+</form>
+
+<script>
+    function fillBrowserTime() {
+        var date = new Date();
+        var offset = date.getTimezoneOffset() * 60 * 1000;
+
+        var localDate = new Date(date-offset);
+
+        var isoDateString = localDate.toISOString();
+
+        isoDateString = isoDateString.slice(0, 16);
+
+        document.getElementById("systemTime").value = isoDateString;
+    }
+</script>
+
+<a href="/">
+    <div class="linkDiv linkButtonDiv">
+        <span class="backIcon"></span>
+        <span>Return to home</span>
+        <span class="backIconSpacing"></span>
+    </div>
+</a>
+</body>
+</html>

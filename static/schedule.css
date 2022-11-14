@@ -1,0 +1,86 @@
+:root {
+    --sliderBackgroundColor: #efefef;
+}
+body {
+    text-align: center;
+}
+.rangeInputs {
+    /*font-size: 0;*/
+    /*display: inline-flex;*/
+}
+.scheduleBlocks {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    margin: 4%;
+}
+.scheduleBlock {
+    margin: 25px;
+}
+h2 {
+    text-align: center;
+}
+.rangeInputLabels {
+    width: 100%;
+    display: inline-flex;
+    justify-content: space-around;
+}
+label {
+    width: 50%;
+    text-align: center;
+}
+
+
+
+
+
+input[type=range]::-webkit-slider-runnable-track {
+    border: none;
+    border-radius: 0;
+    /*background: #efefef;*/
+    height: 4px;
+    margin-right: -3px;
+    margin-left: -3px;
+    background: var(--sliderBackgroundColor);
+    /*line-height:5px;*/
+    /*-webkit-appearance: slider-vertical;*/
+}
+input[type=range]::-webkit-slider-thumb {
+    height: 16px;
+    margin-top: -6px;
+    /*-webkit-appearance: none;*/
+    /*width: 100%;*/
+}
+input[type=range] {
+    -webkit-appearance: none;
+    margin-right: 0;
+    margin-left: 0;
+    background: linear-gradient(to left, #82CFD0 0%, #82CFD0 50%, #fff 50%, #fff 100%);
+    transition: background 450ms ease-in;
+
+}
+
+.backIconSpacing {
+    padding: 20px;
+}
+
+.linkButtonDiv:hover > .backIcon {
+    transition: all .5s linear;
+    animation: backArrowAnimation 1s infinite linear;
+}
+
+.backIcon {
+    background: url('/static/backArrowIcon.png') no-repeat center;
+    /*padding: 24px 80px 24px 24px;*/
+    padding: 24px 40px;
+    transition: all 0.0s;
+}
+
+@keyframes backArrowAnimation {
+    25% {
+        transform: translateX(-10px);
+    }
+    75% {
+      transform: translateX(10px);
+    }
+}

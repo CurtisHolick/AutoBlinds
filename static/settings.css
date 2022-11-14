@@ -1,0 +1,55 @@
+body {
+   padding-left: 10%;
+}
+form {
+    padding-bottom: 3em;
+}
+label, input {
+    font-size: 2.5em;
+}
+input {
+    background-color: #e2e2e2;
+    border: none;
+    margin: 3px;
+    border-radius: 5px;
+    width: 11ch;
+    padding: 5px;
+}
+
+#numTurns {
+    font-size: 32.5px;
+    width: 3ch;
+}
+#systemTime {
+    width: 24ch;
+}
+
+button {
+    margin-top: 1em;
+}
+
+
+.backIconSpacing {
+    padding: 20px;
+}
+
+.linkButtonDiv:hover > .backIcon {
+    transition: all .5s linear;
+    animation: backArrowAnimation 1s infinite linear;
+}
+
+.backIcon {
+    background: url('/static/backArrowIcon.png') no-repeat center;
+    /*padding: 24px 80px 24px 24px;*/
+    padding: 24px 40px;
+    transition: all 0.0s;
+}
+
+@keyframes backArrowAnimation {
+    25% {
+        transform: translateX(-10px);
+    }
+    75% {
+      transform: translateX(10px);
+    }
+}
