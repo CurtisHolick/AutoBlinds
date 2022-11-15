@@ -38,6 +38,7 @@ This is the page I am most pleased with, I feel that the bars with 2 sliders are
 ![image](https://user-images.githubusercontent.com/38133364/201731578-56551f0e-6d51-4f51-bb5b-129222b0b91f.png)
 
 ### Model Assembly
+I designed this model to be 3d printed without any supports, so there are no overhangs greater than 45 degrees.
 ![Auto Blinds Mechanism Assembly](https://user-images.githubusercontent.com/38133364/201802248-b2736dcf-68eb-4f03-b871-a6fc5a6997fd.gif)
 
 ### Model Render
