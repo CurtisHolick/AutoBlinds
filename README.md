@@ -40,6 +40,8 @@ This is the page I am most pleased with, I feel that the bars with 2 sliders are
 ### Model Assembly
 ![Auto Blinds Mechanism Assembly](https://user-images.githubusercontent.com/38133364/201802248-b2736dcf-68eb-4f03-b871-a6fc5a6997fd.gif)
 
+### Model Render
+![Auto_Blinds_Mechanism](https://user-images.githubusercontent.com/38133364/201983353-faac8c67-2bc5-4698-945d-e50d93e655a7.png)
 
 ## Disclaimer
 This project is still in early stages, so is still rough around the edges.
